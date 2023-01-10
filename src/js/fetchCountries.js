@@ -1,4 +1,7 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import {  
+  clearMarkUp,
+} from './renderMarkup';
 //link to main site
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
 //generating a query filter by country
@@ -13,8 +16,10 @@ export function fetchCountries(name) {
       //displaying a Message that by the entered Name => the Country was not found
       //generate an error      
       throw new Error(        
-        Notify.failure('❌ Oops, there is no country with that name'),         
+        clearMarkUp(),
+        Notify.failure('❌ Oops, there is no country with that name'),                  
       );      
+       
     }
     return response.json();
   });

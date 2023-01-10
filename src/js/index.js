@@ -1,13 +1,13 @@
 import '../css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import debounce from 'lodash.debounce';
-import { getRefs } from '../js/getRefs.js';
-import { fetchCountries } from '../js/fetchCountries.js';
+import { getRefs } from './getRefs';
+import { fetchCountries } from './fetchCountries';
 import {
   renderListMarkup,
   renderCardMarkup,
   clearMarkUp,
-} from '../js/renderMarkup.js';
+} from './renderMarkup';
 
 //the delay value of the request to the server
 const DEBOUNCE_DELAY = 300;
@@ -24,7 +24,7 @@ function onInput(evt) {
   } else {    
     fetchCountries(name)//request to the server for the currently entered part of the country name
     .then(fetchCheck)  //processing the received promise, if everything is "good"
-    .catch(fetchError);//processing the received promise if everything is "bad"    
+    .catch();    
   }
 
   function fetchCheck(result) {
@@ -33,15 +33,10 @@ function onInput(evt) {
       clearMarkUp();
     } else if (result.length === 1) {
       clearMarkUp();
-      renderCardMarkup(result);//if only one country found => own markup & filters
+      renderCardMarkup(result);//if only one country found =>display own markup & filters
     } else {
       clearMarkUp();
-      renderListMarkup(result);//if from 2 to 10 countries found =>country flag & country name
+      renderListMarkup(result);//if from 2 to 10 countries found =>display country flag & country name
     }
-  }
-
-  function fetchError(error) {//processing the received promise if everything is "bad" (Catch)          
-    clearMarkUp();
-    Notify.warning(`❌ Oops, something is wrong..`);
   }
 }
