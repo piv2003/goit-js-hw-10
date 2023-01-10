@@ -39,4 +39,12 @@ function onInput(evt) {
       renderListMarkup(result);//if from 2 to 10 countries found =>display country flag & country name
     }
   }
+<<<<<<< HEAD
+=======
+
+  function fetchError(error) {//processing the received promise if everything is "bad" (Catch)          
+//     clearMarkUp();
+    Notify.warning(`❌ Oops, something is wrong..`);
+  }
+>>>>>>> 8bbd483139539c9d188366373d915f3c70760043
 }
