@@ -40,7 +40,7 @@ function onInput(evt) {
     }
   }
 
-  function fetchError() {//processing the received promise if everything is "bad" (Catch)          
+  function fetchError(error) {//processing the received promise if everything is "bad" (Catch)          
     clearMarkUp();
     Notify.warning(`❌ Oops, something is wrong..`);
   }
