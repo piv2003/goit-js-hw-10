@@ -8,7 +8,7 @@ const filter =
 
 export function fetchCountries(name) {
   //request to the site by URL and Filter
-  return fetch(`${BASE_URL}${name}?_limit=15?${filter}`).then(response => {
+  return fetch(`${BASE_URL}${name}?${filter}`).then(response => {
     if (!response.ok) {
       //displaying a Message that by the entered Name => the Country was not found
       //generate an "error"
