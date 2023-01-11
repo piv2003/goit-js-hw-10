@@ -11,6 +11,7 @@ import {
 
 //the delay value of the request to the server
 const DEBOUNCE_DELAY = 300;
+//getting refs to the main markup elements
 const refs = getRefs();
 //set the listener on the input field
 refs.searchBox.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
@@ -21,22 +22,26 @@ function onInput(evt) {
   //if the "input" field is empty => clear the markup
   if (name === '') {
     clearMarkUp();
-  } else {    
-    fetchCountries(name)//request to the server for the currently entered part of the country name
-    .then(fetchCheck)  //processing the received promise, if everything is "good"
-    .catch();    
+  } else {
+    fetchCountries(name) //request to the server for the currently entered part of the country name
+      .then(fetchCheck) //processing the received promise, if everything is "good"
+      .catch((error //processing the received promise, if everything is "bad"
+      ) => console.log(error)
+      );
   }
 
+  //country name input control function
   function fetchCheck(result) {
-    if (result.length > 10) {//if more than 10 countries are found for the query
+    if (result.length > 10) {
+      //if more than 10 countries are found for the query
       Notify.info('Too many matches found. Please enter a more specific name.');
       clearMarkUp();
     } else if (result.length === 1) {
       clearMarkUp();
-      renderCardMarkup(result);//if only one country found =>display own markup & filters
+      renderCardMarkup(result); //if only one country found =>display own markup & filters
     } else {
       clearMarkUp();
-      renderListMarkup(result);//if from 2 to 10 countries found =>display country flag & country name
+      renderListMarkup(result); //if from 2 to 10 countries found =>display country flag & country name
     }
   }
 }

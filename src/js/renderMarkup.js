@@ -1,6 +1,8 @@
 import { getRefs } from './getRefs';
+
 const refs = getRefs();
 
+//markup generation for 2-10 countries
 function renderItemMarkup(result) {
   return result
     .map(
@@ -42,23 +44,23 @@ function renderInfoMarkup(result) {
             <li><span style="font-weight: bold;">Languages: </span>${Object.values(
               languages
             )}</li>     
-              <li><span style="font-weight: bold;">Timezones: </span>${timezones}</li>                                 
-              <li><span style="font-weight: bold;">Borders: </span>${borders}</li>
-              <li><span style="font-weight: bold;">Area: </span>${area}</li>              
-              <li><span style="font-weight: bold;">Currencies: </span>${Object.values(
-                Object.values(currencies)[0]
+            <li><span style="font-weight: bold;">Timezones: </span>${timezones}</li>                                 
+            <li><span style="font-weight: bold;">Borders: </span>${borders}</li>
+            <li><span style="font-weight: bold;">Area: </span>${area}</li>              
+            <li><span style="font-weight: bold;">Currencies: </span>${Object.values(
+              Object.values(currencies)[0]
               )}
-      </li>
-              <li><span style="font-weight: bold;">Car(side): </span>${
-                Object.values(car)[1]
+              </li>
+            <li><span style="font-weight: bold;">Car(side): </span>${
+              Object.values(car)[1]
               }</li>      
-      <li><span style="font-weight: bold;">Coat of arms: </span><a href="${
-        Object.values(coatOfArms)[0]
-      }" target="_blank">National emblem</a></li>
-      <li><span style="font-weight: bold;">Maps: </span><a href="${
-        Object.values(maps)[0]
-      }" target="_blank">Сountry map</a></li>
-            </ul>`
+            <li><span style="font-weight: bold;">Coat of arms: </span><a href="${
+              Object.values(coatOfArms)[0]
+              }" target="_blank">National emblem</a></li>
+            <li><span style="font-weight: bold;">Maps: </span><a href="${
+              Object.values(maps)[0]
+              }" target="_blank">Сountry map</a></li>
+       </ul>`
   );
 }
 
