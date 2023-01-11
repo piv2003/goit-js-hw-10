@@ -25,8 +25,7 @@ function onInput(evt) {
   } else {
     fetchCountries(name) //request to the server for the currently entered part of the country name
       .then(fetchCheck) //processing the received promise, if everything is "good"
-      .catch((error //processing the received promise, if everything is "bad"
-      ) => console.log(error)
+      .catch((error) => console.log(error)//processing the received promise, if everything is "bad"      
       );
   }
 
