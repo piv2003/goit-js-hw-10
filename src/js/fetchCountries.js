@@ -4,7 +4,7 @@ import { clearMarkUp } from './renderMarkup';
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
 //generating a query filter by country
 const filter =
-  'fields = name, capital, population, flags, languages, timezones, borders, area, currencies, car, coatOfArms, maps';
+  'fields = name, capital, population, flags, languages';
 
 export function fetchCountries(name) {
   //request to the site by URL and Filter

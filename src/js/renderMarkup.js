@@ -29,37 +29,14 @@ function renderInfoMarkup(result) {
     ({
       capital,
       population,
-      languages,
-      timezones,
-      borders,
-      area,
-      currencies,
-      car,
-      coatOfArms,
-      maps,
+      languages,      
     }) =>
       `<ul style="list-style-type: none;">
             <li><span style="font-weight: bold;">Capital: </span>${capital}</li>
             <li><span style="font-weight: bold;">Population: </span>${population}</li>
             <li><span style="font-weight: bold;">Languages: </span>${Object.values(
               languages
-            )}</li>     
-            <li><span style="font-weight: bold;">Timezones: </span>${timezones}</li>                                 
-            <li><span style="font-weight: bold;">Borders: </span>${borders}</li>
-            <li><span style="font-weight: bold;">Area: </span>${area}</li>              
-            <li><span style="font-weight: bold;">Currencies: </span>${Object.values(
-              Object.values(currencies)[0]
-              )}
-              </li>
-            <li><span style="font-weight: bold;">Car(side): </span>${
-              Object.values(car)[1]
-              }</li>      
-            <li><span style="font-weight: bold;">Coat of arms: </span><a href="${
-              Object.values(coatOfArms)[0]
-              }" target="_blank">National emblem</a></li>
-            <li><span style="font-weight: bold;">Maps: </span><a href="${
-              Object.values(maps)[0]
-              }" target="_blank">Сountry map</a></li>
+            )}</li>                 
        </ul>`
   );
 }
