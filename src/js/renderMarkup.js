@@ -52,6 +52,6 @@ function renderCardMarkup(result) {
 function clearMarkUp() {
   refs.countryInfo.innerHTML = '';
   refs.countryList.innerHTML = '';  
-}
+} 
 
 export { renderListMarkup, renderCardMarkup, clearMarkUp };
