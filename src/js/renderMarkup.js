@@ -21,7 +21,7 @@ function renderItemMarkup(result) {
 }
 
 function renderListMarkup(result) {
-  refs.countryList.insertAdjacentHTML('beforeend', renderItemMarkup(result));
+  refs.countryList.insertAdjacentHTML('afterbegin', renderItemMarkup(result));
 }
 
 function renderInfoMarkup(result) {
@@ -43,7 +43,7 @@ function renderInfoMarkup(result) {
 
 function renderCardMarkup(result) {
   renderListMarkup(result);
-  refs.countryInfo.insertAdjacentHTML('beforeend', renderInfoMarkup(result));
+  refs.countryInfo.insertAdjacentHTML('afterbegin', renderInfoMarkup(result));
   textSize = document.querySelector('.text-size');
   textSize.style.fontSize = '24pt';
   textSize.style.fontWeight = 'bold';
